@@ -7,6 +7,7 @@ import {
   FaYoutube,
   FaPinterestP,
 } from "react-icons/fa";
+import { phoneNumber } from "../lib/number";
 
 const Footer = () => {
   return (
@@ -19,9 +20,12 @@ const Footer = () => {
           points toward reward travel, upgrades, and more.
         </p>
 
-        <button className="px-6 py-3 bg-transparent border border-black text-[#d7dcdf] font-semibold rounded-lg shadow-md hover:bg-[#2260b1] first-letter:transition duration-300">
+        <a
+          href={`tel:${phoneNumber.replace(/[^0-9]/g, "")}`}
+          className="px-6 py-3 bg-transparent border border-black text-[#d7dcdf] font-semibold rounded-lg shadow-md hover:bg-[#2260b1] first-letter:transition duration-300"
+        >
           Join Now
-        </button>
+        </a>
       </div>
 
       {/* Bottom Navigation */}
@@ -63,7 +67,7 @@ const Footer = () => {
               </li>
               <li>
                 <a href="#" className="hover:underline">
-                Skywayfares Customer Service Commitments
+                  Skywayfares Customer Service Commitments
                 </a>
               </li>
             </ul>
@@ -100,7 +104,7 @@ const Footer = () => {
               </li>
               <li>
                 <a href="#" className="hover:underline">
-                Skywayfares Vacations
+                  Skywayfares Vacations
                 </a>
               </li>
               <li>

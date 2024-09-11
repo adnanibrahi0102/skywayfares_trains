@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FaBars, FaUser, FaSearch } from "react-icons/fa";
-
+import { phoneNumber } from "../lib/number";
 const MobileNavbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -12,25 +12,27 @@ const MobileNavbar = () => {
     <div className="md:hidden sticky top-0 z-40">
       {/* Top Bar with Logo and Icons */}
       <div className="bg-white shadow-md">
-      <nav className=" py-4 px-6 flex items-center justify-between">
-        {/* Logo */}
-        <span className="text-2xl font-semibold text-gray-700">Skywayfares</span>
-     
-        {/* Right Aligned Icons */}
-        <div className="flex items-center space-x-4 text-gray-700">
-          <FaSearch className="hover:text-sky-600 cursor-pointer" />
-          <FaUser className="hover:text-sky-600 cursor-pointer" />
+        <nav className=" py-4 px-6 flex items-center justify-between">
+          {/* Logo */}
+          <span className="text-2xl font-semibold text-gray-700">
+            Skywayfares
+          </span>
 
-          {/* Hamburger Icon */}
-          <FaBars
-            className="hover:text-sky-600 cursor-pointer"
-            onClick={toggleMobileMenu}
-          />
-        </div>
-      </nav>
-       <div className="flex justify-center gap-4">
-       <a
-            href="#"
+          {/* Right Aligned Icons */}
+          <div className="flex items-center space-x-4 text-gray-700">
+            <FaSearch className="hover:text-sky-600 cursor-pointer" />
+            <FaUser className="hover:text-sky-600 cursor-pointer" />
+
+            {/* Hamburger Icon */}
+            <FaBars
+              className="hover:text-sky-600 cursor-pointer"
+              onClick={toggleMobileMenu}
+            />
+          </div>
+        </nav>
+        <div className="flex justify-center gap-4">
+          <a
+            href={`tel:${phoneNumber.replace(/[^0-9]/g, "")}`}
             className="text-xl text-gray-700 hover:text-sky-600 hover:underline hover:underline-offset-4"
           >
             BOOK
@@ -47,7 +49,7 @@ const MobileNavbar = () => {
           >
             MY TRIP
           </a>
-       </div>
+        </div>
       </div>
 
       {/* Mobile Menu Overlay */}

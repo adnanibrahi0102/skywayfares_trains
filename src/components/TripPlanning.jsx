@@ -1,6 +1,5 @@
-
 import React from "react";
-
+import { phoneNumber } from "../lib/number";
 const TripPlanningMap = () => {
   return (
     <div className="hidden md:flex flex-col md:flex-row items-center justify-between p-6 bg-gray-100 rounded-lg shadow-lg">
@@ -14,15 +13,18 @@ const TripPlanningMap = () => {
           See our routes and stations on a map, find trip options between
           stations, and book your next trip.
         </p>
-        <button className="md:ml-5 px-8 py-2 bg-[#1a5d7e] text-white font-semibold hover:bg-[#1d6488] transition duration-300">
-          Start Planning
-        </button>
+        <a
+          href={`tel:${phoneNumber.replace(/[^0-9]/g, "")}`}
+          className="md:ml-5 px-8 py-2 bg-[#1a5d7e] text-white font-semibold hover:bg-[#1d6488] transition duration-300"
+        >
+          {phoneNumber}
+        </a>
       </div>
 
       {/* GIF Image */}
       <div className="md:w-1/2 flex justify-center">
         <img
-          src="/globe.gif" 
+          src="/globe.gif"
           alt="Trip Planning Map"
           className="max-w-full max-h-[400px] object-cover"
         />

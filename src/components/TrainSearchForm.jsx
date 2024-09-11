@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Stations from "../data/Stations.json";
-
+import { useNavigate } from "react-router-dom";
+import Loading from "./Loading";
 const TrainSearchForm = () => {
   const [from, setFrom] = useState("");
   const [to, setTo] = useState("");
@@ -8,6 +9,8 @@ const TrainSearchForm = () => {
   const [toSuggestions, setToSuggestions] = useState([]);
   const [travelerCount, setTravelerCount] = useState(1); // State for traveler count
   const [showTravelerDropdown, setShowTravelerDropdown] = useState(false); // State to toggle dropdown
+  const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
 
   // Filter suggestions for "From" input
   const handleFromChange = (e) => {
@@ -63,6 +66,21 @@ const TrainSearchForm = () => {
     setTravelerCount(count);
     setShowTravelerDropdown(false);
   };
+  const handleFindTrains = () => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false); 
+      navigate("/turbulence"); 
+    }, 3000); 
+  };
+ 
+  if (loading) {
+    return(
+     <div className="flex justify-center items-center h-screen w-screen">
+       <Loading/>
+     </div>
+    )
+  }
 
   return (
     <div className="bg-gray-100 p-8">
@@ -146,7 +164,10 @@ const TrainSearchForm = () => {
           />
 
           {/* Find Trains Button */}
-          <button className="bg-green-500 text-base text-white px-10 py-2 rounded">
+          <button
+            onClick={handleFindTrains}
+            className="bg-green-500 text-base text-white px-10 py-2 rounded"
+          >
             FIND TRAINS
           </button>
         </div>

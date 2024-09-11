@@ -4,23 +4,24 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Navigation, Pagination } from "swiper/modules";
+import { phoneNumber } from "../lib/number";
 
 const slideContents = [
   {
     title: "Discover the Wonders of Nature",
     description: "Explore beautiful landscapes and serene environments.",
-    buttonText: "Book Now",
+    buttonText: "(833 )368 6811",
   },
   {
     title: "Urban Adventures Await",
     description:
       "Experience the excitement of city life and cultural landmarks.",
-    buttonText: "Discover More",
+    buttonText: "(833 )368 6811",
   },
   {
     title: "Relax and Unwind",
     description: "Find peace and tranquility in scenic retreats and getaways.",
-    buttonText: "Book Your Escape",
+    buttonText: "(833 )368 6811",
   },
 ];
 
@@ -74,9 +75,12 @@ const ImageCarousel = () => {
         <p className="text-xl font-thin text-white mb-4">
           {slideContents[currentSlide]?.description}
         </p>
-        <button className="px-8 py-3 bg-[#1a5d7e] text-white font-semibold rounded-lg shadow-md hover:bg-[#1d6488] transition duration-300">
+        <a
+          href={`tel:${phoneNumber.replace(/[^0-9]/g, "")}`}
+          className="px-8 py-3 bg-[#1a5d7e] text-white font-semibold rounded-lg shadow-md hover:bg-[#1d6488] transition duration-300"
+        >
           {slideContents[currentSlide]?.buttonText}
-        </button>
+        </a>
       </div>
 
       {/* Mobile Banner */}
@@ -87,9 +91,12 @@ const ImageCarousel = () => {
         <p className="text-base font-thin text-black mb-4">
           {slideContents[currentSlide]?.description}
         </p>
-        <button className="px-6 py-2 bg-[#1a5d7e] text-white font-semibold rounded-lg shadow-md hover:bg-[#1d6488] transition duration-300">
+        <a
+          href={`tel:${phoneNumber.replace(/[^0-9]/g, "")}`}
+          className="px-8 py-3 bg-[#1a5d7e] text-white font-semibold rounded-lg shadow-md hover:bg-[#1d6488] transition duration-300"
+        >
           {slideContents[currentSlide]?.buttonText}
-        </button>
+        </a>
       </div>
     </div>
   );

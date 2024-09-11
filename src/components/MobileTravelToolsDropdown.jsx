@@ -1,7 +1,6 @@
-// src/components/MobileTravelToolsDropdown.jsx
 import React, { useState } from "react";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
-
+import { phoneNumber } from "../lib/number";
 const MobileTravelToolsDropdown = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -37,9 +36,12 @@ const MobileTravelToolsDropdown = () => {
               routes and stations on a map, find trip options between stations,
               and book your next trip.
             </p>
-            <button className="px-6 py-2 bg-[#1a5d7e] text-white rounded-full font-semibold hover:bg-[#17455c] transition duration-300">
+            <a
+              href={`tel:${phoneNumber.replace(/[^0-9]/g, "")}`}
+              className="px-6 py-2 bg-[#1a5d7e] text-white rounded-full font-semibold hover:bg-[#17455c] transition duration-300"
+            >
               Start Planning
-            </button>
+            </a>
           </div>
 
           {/* Track Your Train */}
@@ -50,9 +52,12 @@ const MobileTravelToolsDropdown = () => {
             <p className="text-sm text-gray-600 mb-4">
               Check train status and track your train's location.
             </p>
-            <button className="px-6 py-2 bg-[#1a5d7e] text-white rounded-full font-semibold hover:bg-[#17455c] transition duration-300">
+            <a
+              href={`tel:${phoneNumber.replace(/[^0-9]/g, "")}`}
+              className="px-6 py-2 bg-[#1a5d7e] text-white rounded-full font-semibold hover:bg-[#17455c] transition duration-300"
+            >
               Track Now
-            </button>
+            </a>
           </div>
 
           {/* Make Travel Easier */}
