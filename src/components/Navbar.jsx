@@ -6,12 +6,7 @@ const Navbar = () => {
       <div className="container mx-auto flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center space-x-6">
-          {/* Logo image, if available */}
-          {/* <img
-            src="/path-to-your-logo/amtrak_logos_all-0.svg"
-            alt="Amtrak Logo"
-            className="h-10"
-          /> */}
+      
           <span className="text-2xl font-semibold text-gray-700">Skywayfares</span>
 
           {/* Navbar Links */}

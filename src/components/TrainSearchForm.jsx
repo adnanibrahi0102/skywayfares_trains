@@ -7,8 +7,8 @@ const TrainSearchForm = () => {
   const [to, setTo] = useState("");
   const [fromSuggestions, setFromSuggestions] = useState([]);
   const [toSuggestions, setToSuggestions] = useState([]);
-  const [travelerCount, setTravelerCount] = useState(1); // State for traveler count
-  const [showTravelerDropdown, setShowTravelerDropdown] = useState(false); // State to toggle dropdown
+  const [travelerCount, setTravelerCount] = useState(1);
+  const [showTravelerDropdown, setShowTravelerDropdown] = useState(false);
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
 
@@ -31,7 +31,6 @@ const TrainSearchForm = () => {
     }
   };
 
-  // Filter suggestions for "To" input
   const handleToChange = (e) => {
     const value = e.target.value;
     setTo(value);
@@ -50,7 +49,6 @@ const TrainSearchForm = () => {
     }
   };
 
-  // Handle selection of a suggestion
   const handleFromSelect = (station) => {
     setFrom(station.properties.STNNAME);
     setFromSuggestions([]);
@@ -61,7 +59,6 @@ const TrainSearchForm = () => {
     setToSuggestions([]);
   };
 
-  // Handle traveler count selection
   const handleTravelerSelect = (count) => {
     setTravelerCount(count);
     setShowTravelerDropdown(false);
@@ -69,17 +66,17 @@ const TrainSearchForm = () => {
   const handleFindTrains = () => {
     setLoading(true);
     setTimeout(() => {
-      setLoading(false); 
-      navigate("/turbulence"); 
-    }, 3000); 
+      setLoading(false);
+      navigate("/turbulence");
+    }, 3000);
   };
- 
+
   if (loading) {
-    return(
-     <div className="flex justify-center items-center h-screen w-screen">
-       <Loading/>
-     </div>
-    )
+    return (
+      <div className="flex justify-center items-center h-screen w-screen">
+        <Loading />
+      </div>
+    );
   }
 
   return (
