@@ -9,7 +9,7 @@ const MobileNavbar = () => {
   };
 
   return (
-    <div className="md:hidden sticky top-0 z-40">
+    <div className="md:hidden sticky top-0 z-40 mt-12">
       {/* Top Bar with Logo and Icons */}
       <div className="bg-white shadow-md">
         <nav className=" py-4 px-6 flex items-center justify-between">

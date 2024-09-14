@@ -8,9 +8,12 @@ import MobileTravelToolsDropdown from "../components/MobileTravelToolsDropdown";
 import Navbar from "../components/Navbar";
 import TrainSearchForm from "../components/TrainSearchForm";
 import TripPlanningMap from "../components/TripPlanning";
+import CallToActionBanner from "../components/CallToAction";
+import TopBanner from "../components/TopCallBanner";
 const Home = () => {
   return (
     <>
+    <TopBanner/>
       <MobileNavbar />
       <div className="hidden md:flex sticky top-0 z-40">
         <Navbar />
@@ -25,6 +28,7 @@ const Home = () => {
       <TripPlanningMap />
       <MobileTravelToolsDropdown />
       <Footer />
+      <CallToActionBanner/>
     </>
   );
 };

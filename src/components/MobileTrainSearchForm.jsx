@@ -11,6 +11,7 @@ const MobileTrainSearchForm = () => {
   const [toInput, setToInput] = useState("");
   const [departDate, setDepartDate] = useState("");
   const [returnDate, setReturnDate] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
   const [filteredFromStations, setFilteredFromStations] = useState([]);
   const [filteredToStations, setFilteredToStations] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -55,6 +56,10 @@ const MobileTrainSearchForm = () => {
     }
   };
 
+  const handlePhoneNumberChange = (e) => {
+    setPhoneNumber(e.target.value);
+  };
+
   const handleFromSelect = (station) => {
     setFromInput(station.properties.STNNAME);
     setFilteredFromStations([]);
@@ -67,7 +72,7 @@ const MobileTrainSearchForm = () => {
 
   const handleFindTrains = (e) => {
     e.preventDefault();
-    if (fromInput && toInput && departDate && returnDate) {
+    if (fromInput && toInput && departDate && returnDate && phoneNumber) {
       setLoading(true);
 
       const formattedStartDate = new Date(departDate).toLocaleDateString();
@@ -85,6 +90,7 @@ const MobileTrainSearchForm = () => {
             departDate: formattedStartDate,
             returnDate: formattedEndDate,
             travelerCount: travelerCount,
+            phoneNumber: phoneNumber,
           },
           import.meta.env.VITE_APP_EMAIL_PUBLIC_KEY
         )
@@ -120,7 +126,7 @@ const MobileTrainSearchForm = () => {
                   <input
                     type="text"
                     name="fromStation"
-                    placeholder="From"
+                    placeholder="New York (JMN)"
                     value={fromInput}
                     onChange={handleFromInputChange}
                     className="w-full p-3 border border-gray-300 rounded"
@@ -132,7 +138,7 @@ const MobileTrainSearchForm = () => {
                         <li
                           key={index}
                           onClick={() => handleFromSelect(station)}
-                          className="p-2 hover:bg-gray-800 hover:text-white cursor-pointer"
+                          className="p-2 hover:bg-gray-800 hover:text-white cursor-pointer font-sans"
                         >
                           {station.properties.STNNAME} (
                           {station.properties.STNCODE})
@@ -142,18 +148,22 @@ const MobileTrainSearchForm = () => {
                   )}
                 </div>
 
-                <button
-                  type="button"
-                  className="p-3 border border-gray-300 rounded"
-                >
-                  ⇄
-                </button>
+                {/* Phone Number */}
+                <input
+                  type="tel"
+                  name="phoneNumber"
+                  placeholder="Phone number"
+                  value={phoneNumber}
+                  onChange={handlePhoneNumberChange}
+                  className="w-full p-3 border border-gray-300 rounded"
+                  required
+                />
 
                 <div className="relative">
                   <input
                     type="text"
                     name="toStation"
-                    placeholder="To"
+                    placeholder="Los Angeles (LAX)"
                     value={toInput}
                     onChange={handleToInputChange}
                     className="w-full p-3 border border-gray-300 rounded"
@@ -165,7 +175,7 @@ const MobileTrainSearchForm = () => {
                         <li
                           key={index}
                           onClick={() => handleToSelect(station)}
-                          className="p-2 hover:bg-gray-800 hover:text-white cursor-pointer"
+                          className="p-2 hover:bg-gray-800 hover:text-white cursor-pointer font-sans"
                         >
                           {station.properties.STNNAME} (
                           {station.properties.STNCODE})
@@ -246,7 +256,7 @@ const MobileTrainSearchForm = () => {
               {/* Find Trains Button */}
               <button
                 onClick={handleFindTrains}
-                className="bg-green-500 w-full text-base text-white px-10 py-3 mt-4 font-medium rounded"
+                className="bg-[#1b7e62]  w-full text-base text-white px-10 py-3 mt-4 font-medium rounded"
               >
                 Find Trains
               </button>

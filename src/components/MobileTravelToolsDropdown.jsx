@@ -12,7 +12,7 @@ const MobileTravelToolsDropdown = () => {
     <div className="sm:block md:hidden ">
       {/* Dropdown Toggle */}
       <button
-        className="w-full text-left bg-[#1a5d7e] text-white px-4 py-3 flex items-center justify-between rounded-t-lg shadow-md focus:outline-none"
+        className="w-full text-left bg-[#1c7c61]  text-white px-4 py-3 flex items-center justify-between rounded-t-lg shadow-md focus:outline-none"
         onClick={toggleDropdown}
       >
         <span className="font-semibold text-lg">Travel Tools</span>
@@ -38,7 +38,7 @@ const MobileTravelToolsDropdown = () => {
             </p>
             <a
               href={`tel:${phoneNumber.replace(/[^0-9]/g, "")}`}
-              className="px-6 py-2 bg-[#1a5d7e] text-white rounded-full font-semibold hover:bg-[#17455c] transition duration-300"
+              className="px-6 py-2 bg-[#104e3c]  text-white rounded-full font-semibold hover:bg-[#17455c] transition duration-300"
             >
               Start Planning
             </a>
@@ -54,7 +54,7 @@ const MobileTravelToolsDropdown = () => {
             </p>
             <a
               href={`tel:${phoneNumber.replace(/[^0-9]/g, "")}`}
-              className="px-6 py-2 bg-[#1a5d7e] text-white rounded-full font-semibold hover:bg-[#17455c] transition duration-300"
+              className="px-6 py-2 bg-[#104e3c]  text-white rounded-full font-semibold hover:bg-[#17455c] transition duration-300"
             >
               Track Now
             </a>
@@ -70,7 +70,7 @@ const MobileTravelToolsDropdown = () => {
               information at select stations, travel with contact-free eTicket
               scanning, and access helpful information at your fingertips.
             </p>
-            <button className="px-6 py-2 bg-[#1a5d7e] text-white rounded-full font-semibold hover:bg-[#17455c] transition duration-300">
+            <button className="px-6 py-2 bg-[#104e3c]  text-white rounded-full font-semibold hover:bg-[#17455c] transition duration-300">
               Learn More
             </button>
           </div>
@@ -86,7 +86,7 @@ const MobileTravelToolsDropdown = () => {
               disabilities and have worked to make our facilities more
               accessible to passengers with disabilities.
             </p>
-            <button className="px-6 py-2 bg-[#1a5d7e] text-white rounded-full font-semibold hover:bg-[#17455c] transition duration-300">
+            <button className="px-6 py-2 bg-[#104e3c]  text-white rounded-full font-semibold hover:bg-[#17455c] transition duration-300">
               Learn More
             </button>
           </div>
