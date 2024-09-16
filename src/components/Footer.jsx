@@ -11,7 +11,7 @@ import { phoneNumber } from "../lib/number";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="bg-[#188b6b] text-white">
       {/* Top Bar */}
       <div className="bg-[#104e3c] py-6 px-4 md:px-8 flex flex-col md:flex-row gap-2 items-start justify-between">
         <h2 className="text-xl font-bold text-gray-950 md:ml-8">Skywayfares</h2>

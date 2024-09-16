@@ -14,7 +14,7 @@ const MobileNavbar = () => {
       <div className="bg-white shadow-md">
         <nav className=" py-4 px-6 flex items-center justify-between">
           {/* Logo */}
-          <span className="text-2xl font-semibold text-gray-700">
+          <span className="text-2xl font-semibold text-[#155744]">
             Skywayfares
           </span>
 

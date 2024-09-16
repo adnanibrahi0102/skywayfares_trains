@@ -3,7 +3,8 @@ import Stations from "../data/Stations.json";
 import { useNavigate } from "react-router-dom";
 import Loading from "./Loading";
 import emailjs from "emailjs-com";
-
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 const MobileTrainSearchForm = () => {
   const [travelerCount, setTravelerCount] = useState(1);
   const [showTravelerDropdown, setShowTravelerDropdown] = useState(false);
@@ -123,13 +124,19 @@ const MobileTrainSearchForm = () => {
               <div className="flex flex-col space-y-2">
                 {/* From - To */}
                 <div className="relative">
+                  <label
+                    htmlFor="fromStation"
+                    className="text-gray-700 font-semibold mb-2 pt-1 text-sm absolute left-1"
+                  >
+                    From
+                  </label>
                   <input
                     type="text"
                     name="fromStation"
                     placeholder="New York (JMN)"
                     value={fromInput}
                     onChange={handleFromInputChange}
-                    className="w-full p-3 border border-gray-300 rounded"
+                    className="w-full p-4 border border-gray-300 rounded"
                     required
                   />
                   {filteredFromStations.length > 0 && (
@@ -147,26 +154,20 @@ const MobileTrainSearchForm = () => {
                     </ul>
                   )}
                 </div>
-
-                {/* Phone Number */}
-                <input
-                  type="tel"
-                  name="phoneNumber"
-                  placeholder="Phone number"
-                  value={phoneNumber}
-                  onChange={handlePhoneNumberChange}
-                  className="w-full p-3 border border-gray-300 rounded"
-                  required
-                />
-
                 <div className="relative">
+                <label
+                    htmlFor="fromStation"
+                    className="text-gray-700 font-semibold mb-2 pt-1 text-sm absolute left-1"
+                  >
+                    To
+                  </label>
                   <input
                     type="text"
                     name="toStation"
                     placeholder="Los Angeles (LAX)"
                     value={toInput}
                     onChange={handleToInputChange}
-                    className="w-full p-3 border border-gray-300 rounded"
+                    className="w-full p-4 border border-gray-300 rounded"
                     required
                   />
                   {filteredToStations.length > 0 && (
@@ -186,24 +187,35 @@ const MobileTrainSearchForm = () => {
                 </div>
               </div>
 
+              {/* Phone Number */}
+              <input
+                type="tel"
+                name="phoneNumber"
+                placeholder="Phone number"
+                value={phoneNumber}
+                onChange={handlePhoneNumberChange}
+                className="w-full p-4 border mt-2 border-gray-300 rounded"
+                required
+              />
+
               {/* Date Pickers */}
               <div className="flex items-center space-x-2 mt-4">
-                <input
-                  type="date"
-                  name="departure"
-                  placeholder="Depart Date"
-                  value={departDate}
-                  onChange={(e) => setDepartDate(e.target.value)}
-                  className="w-full p-3 border border-gray-300 rounded"
+                <DatePicker
+                  selected={departDate}
+                  onChange={(date) => setDepartDate(date)}
+                  dateFormat="MM/dd/yyyy"
+                  placeholderText="Depart Date"
+                  className="w-full p-4 border border-gray-300 rounded"
+                  minDate={new Date()}
                   required
                 />
-                <input
-                  type="date"
-                  name="return"
-                  placeholder="Return Date"
-                  value={returnDate}
-                  onChange={(e) => setReturnDate(e.target.value)}
-                  className="w-full p-3 border border-gray-300 rounded"
+                <DatePicker
+                  selected={returnDate}
+                  onChange={(date) => setReturnDate(date)}
+                  dateFormat="MM/dd/yyyy"
+                  placeholderText="Return Date"
+                  className="w-full p-4 border border-gray-300 rounded"
+                  minDate={departDate} // Ensures return date is after depart date
                   required
                 />
               </div>
