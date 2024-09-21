@@ -23,9 +23,9 @@ const Home = () => {
       <div className="hidden md:flex">
         <TrainSearchForm />
       </div>
-
-      <ImageCarousel />
       <NewBannerBanner/>
+      <ImageCarousel />
+     
       <InfoCards />
       <TripPlanningMap />
       <MobileTravelToolsDropdown />
