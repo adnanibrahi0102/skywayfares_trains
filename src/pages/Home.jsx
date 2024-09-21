@@ -10,6 +10,7 @@ import TrainSearchForm from "../components/TrainSearchForm";
 import TripPlanningMap from "../components/TripPlanning";
 import CallToActionBanner from "../components/CallToAction";
 import TopBanner from "../components/TopCallBanner";
+import NewBannerBanner from "../components/NewBannerComp";
 const Home = () => {
   return (
     <>
@@ -24,6 +25,7 @@ const Home = () => {
       </div>
 
       <ImageCarousel />
+      <NewBannerBanner/>
       <InfoCards />
       <TripPlanningMap />
       <MobileTravelToolsDropdown />
