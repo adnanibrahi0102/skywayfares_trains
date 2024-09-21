@@ -14,7 +14,7 @@ import NewBannerBanner from "../components/NewBannerComp";
 const Home = () => {
   return (
     <>
-    <TopBanner/>
+      <TopBanner />
       <MobileNavbar />
       <div className="hidden md:flex sticky top-0 z-40">
         <Navbar />
@@ -23,14 +23,14 @@ const Home = () => {
       <div className="hidden md:flex">
         <TrainSearchForm />
       </div>
-      <NewBannerBanner/>
+      <NewBannerBanner />
       <ImageCarousel />
-     
+
       <InfoCards />
       <TripPlanningMap />
       <MobileTravelToolsDropdown />
       <Footer />
-      <CallToActionBanner/>
+      <CallToActionBanner />
     </>
   );
 };
